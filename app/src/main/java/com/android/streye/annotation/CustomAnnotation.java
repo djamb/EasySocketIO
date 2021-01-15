@@ -40,7 +40,6 @@ public class CustomAnnotation extends Activity {
     application = (BaseApp2) getApplicationContext();
     application.runService();
 
-    Log.e("aminano1111111111111", "" + application.sendData("connection", "SocketGeneralEvents"));
 
     final Handler handler2 = new Handler(Looper.getMainLooper());
     handler2.postDelayed(new Runnable() {
@@ -48,7 +47,6 @@ public class CustomAnnotation extends Activity {
       public void run() {
         Log.e("activity", ""+application.sendData("message", "caca"));
         //application.getMyService().closeSocket();
-        //application.connect(new SocketParameterLibrary("https://socket-enterprise-dev.streye.com:443","device=glass/enterprise&user=" + "?@caca.com" + "&access_token=" + "señorcaca"));
 
       }
     }, 5000);
@@ -67,6 +65,6 @@ public class CustomAnnotation extends Activity {
   @Override
   protected void onPause() {
     super.onPause();
-    //StringChachi.unbind2(this);
+    StringChachi.unbind2(this);
   }
 }
