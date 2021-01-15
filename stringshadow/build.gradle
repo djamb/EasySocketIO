@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+
+android {
+  compileSdkVersion 26
+  buildToolsVersion '27.0.3'
+
+  defaultConfig {
+    minSdkVersion 19
+    targetSdkVersion 26
+    versionCode 110
+    versionName "1.1.1"
+    javaCompileOptions {
+      annotationProcessorOptions {
+        includeCompileClasspath true
+      }
+    }
+  }
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+  uploadArchives {
+    repositories {
+      mavenDeployer {
+        repository(url: "http://sonatype.droiders.com/content/repositories/releases/") {
+          authentication(userName: "deployment", password: "deployment123")
+        }
+        pom.version = "1.1.1"
+        pom.artifactId = "stringshadow"
+        pom.groupId = "com.droiders"
+        pom.packaging = "aar"
+      }
+    }
+  }
+  repositories {
+    mavenCentral()
+    maven {
+      url "http://sonatype.droiders.com/content/repositories/releases/"
+    }
+  }
+}
+
+dependencies {
+  api project(':stringshadow-processor')
+  compile 'com.google.auto.service:auto-service:1.0-rc2'
+  compile 'com.squareup:javapoet:1.9.0'
+  api project(':constant-share')
+
+
+}

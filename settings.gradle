@@ -1,0 +1,1 @@
+include ':app', ':stringshadow-processor', ':stringshadow', ':constant-share', ':socketservicelibrary'
