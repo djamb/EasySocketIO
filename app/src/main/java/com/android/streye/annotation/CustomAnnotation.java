@@ -15,56 +15,48 @@ import com.android.streye.stringshadow.StringChachi;
 public class CustomAnnotation extends Activity {
   public BaseApp2 application;
 
-
-
-  @MethodValue(value = "pong")
-  public void myMethod1(Object[] object) {
-    Log.e("CustomAnnotation pong : ", "pong: " + object[0] + "    ");
-  }
-
-  @MethodValue(value = "ping")
-  public void myMethod2(Object[] object) {
-    Log.e("CustomAnnotation ping: ", "ping: ");
-  }
-
-
   @MethodValue(value = "messages")
   public void myMethod7(Object[] object) {
-    Log.e("recibo del server: ", ""+object[0]);
+    Log.e("recive from server in event messages: ", "" + object[0]);
   }
-
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     application = (BaseApp2) getApplicationContext();
+    //You can autorun service and run socket when android is rebooted
+    //application.setAutoRunServiceWhenSystemOn(true);
+    //only need to start in 1 activity or applicaction
     application.runService();
 
 
+    //From test server, send data in message channel at 5 sec
     final Handler handler2 = new Handler(Looper.getMainLooper());
     handler2.postDelayed(new Runnable() {
       @Override
       public void run() {
-        Log.e("activity", ""+application.sendData("message", "caca"));
+        Log.e("Send data to socket", "" + application.sendData("message", "caca"));
+
+        //You can discconect and reconnect
         //application.getMyService().closeSocket();
+        //application.connect(new SocketParameterLibrary("ip","query"));
 
       }
     }, 5000);
-
-
   }
 
   @Override
   protected void onResume() {
     super.onResume();
+    // Suscribe event from view
     StringChachi.bind2(this);
-    //Intent intent = new Intent(this, CustomAnnotation2.class);
-    //startActivity(intent);
+
   }
 
   @Override
   protected void onPause() {
     super.onPause();
-    StringChachi.unbind2(this);
+    // Unsuscribe event from view
+    //StringChachi.unbind2(this);
   }
 }

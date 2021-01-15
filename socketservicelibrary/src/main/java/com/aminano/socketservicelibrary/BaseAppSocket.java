@@ -18,10 +18,6 @@ public abstract class BaseAppSocket extends Application implements SocketParamet
   private SocketService myService;
   private SocketParameterLibrary socketParameter;
 
-  //@MethodValue(value = "authentication_error")
-  //public void myMethodBaseAPP(Object[] object) {
-  //  Log.e("BaseAppSocket aminano : ", "mierdarota: " + object[0] + "    ");
-  //}
 
   @Override
   public void onCreate() {
