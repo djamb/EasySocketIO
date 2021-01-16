@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+import com.aminano.socketservicelibrary.BaseAppSocket;
+import com.aminano.socketservicelibrary.SocketParameterLibrary;
 import com.android.streye.constant_share.MethodValue;
 import com.android.streye.stringshadow.StringChachi;
 
@@ -39,7 +41,7 @@ public class CustomAnnotation extends Activity {
 
         //You can discconect and reconnect
         //application.getMyService().closeSocket();
-        //application.connect(new SocketParameterLibrary("ip","query"));
+        //application.connect(new SocketParameterLibrary("http://192.168.1.108:3000",""));
 
       }
     }, 5000);
