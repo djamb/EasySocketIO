@@ -31,7 +31,9 @@ dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
 
   implementation 'androidx.appcompat:appcompat:1.0.2'
-  implementation project(':stringshadow')
+//  implementation project(':stringshadow')
+  api project(':stringshadow')
+//  implementation 'com.github.djamb:EasySocketIO:1.0.2'
   implementation('io.socket:socket.io-client:2.0.0') {
     exclude group: 'org.json', module: 'json'
   }
