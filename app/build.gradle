@@ -32,8 +32,8 @@ dependencies {
         // excluding org.json which is provided by Android
         exclude group: 'org.json', module: 'json'
     }
-    api project(':socketservicelibrary')
+//    api project(':socketservicelibrary')
 
-//    implementation project(':socketservicelibrary')
-//    implementation 'com.github.djamb:EasySocketIO:1.0.2'
+    implementation project(':socketservicelibrary')
+//    implementation 'com.github.djamb:EasySocketIO:1.0.3'
 }

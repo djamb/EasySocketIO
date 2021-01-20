@@ -1,5 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'maven'
+apply plugin: 'com.github.dcendents.android-maven'
+group = 'com.github.djamb'
 android {
   compileSdkVersion 29
   buildToolsVersion "29.0.1"
@@ -33,7 +35,9 @@ dependencies {
   implementation 'androidx.appcompat:appcompat:1.0.2'
 //  implementation project(':stringshadow')
   api project(':stringshadow')
-//  implementation 'com.github.djamb:EasySocketIO:1.0.2'
+//  implementation 'com.github.djamb.EasySocketIO:stringshadow:1.0.3'
+
+//  implementation 'com.github.djamb:EasySocketIO:1.0.3'
   implementation('io.socket:socket.io-client:2.0.0') {
     exclude group: 'org.json', module: 'json'
   }
