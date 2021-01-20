@@ -1,5 +1,22 @@
+[![](https://jitpack.io/v/djamb/EasySocketIO.svg)](https://jitpack.io/#djamb/EasySocketIO)
 # EasySocketIO
 EasySocketIo is a repository develop with annotation for a easy use of socket.io
+
+
+#Gradle
+Compile my wrapper:
+
+```
+allprojects {
+  repositories {
+    maven { url 'https://jitpack.io' }
+  }
+}
+  dependencies {
+    implementation 'com.github.djamb.EasySocketIO:socketservicelibrary:1.0.4'
+	}
+
+```
 
 # Use example:
 This code is a basic example. I recommend you go to Activities in app module and see all examples.
