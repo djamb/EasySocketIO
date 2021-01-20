@@ -1,15 +1,15 @@
 # EasySocketIO
 EasySocketIo is a repository develop with annotation for a easy use of socket.io
 
-#Use example:
+# Use example:
 This code is a basic example. I recommend you go to Activities in app module and see all examples.
 
 
-For use it its need it:
+# For use it its need it:
 
 # Step 1
 
-##Option 1
+## Option 1
 Baseapp2 extends BaseAppSocket and set your socket url. Add android:name=".BaseApp2" to application in . SocketGeneralEvents is not necessary, its a class for control general event in application enviorement.
 
 
@@ -30,7 +30,7 @@ public class BaseApp2 extends BaseAppSocket {
   }
 }
 ```
-##Option 2 (**Under construction**)
+## Option 2 (**Under construction**)
 You can connect and disconnect socket server in any class of your project
 
 **AndroidManifest.xml**

@@ -1,9 +1,10 @@
 package com.droiders.stringshadow;
 
 import com.android.streye.constant_share.ExtendsValue;
+import com.android.streye.constant_share.InterfaceValue;
 import com.android.streye.constant_share.MethodValue;
 import com.android.streye.constant_share.StringValue;
-import com.android.streye.constant_share.InterfaceValue;
+//import com.android.streye.constant_share.InterfaceValue;
 import com.google.auto.service.AutoService;
 import com.squareup.javapoet.AnnotationSpec;
 import com.squareup.javapoet.ArrayTypeName;
