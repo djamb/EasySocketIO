@@ -1,4 +1,4 @@
-package com.android.streye.annotation;
+package com.aminano.djamb.annotation;
 
 import com.aminano.socketservicelibrary.BaseAppSocket;
 import com.aminano.socketservicelibrary.SocketParameterLibrary;

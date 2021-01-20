@@ -3,7 +3,7 @@
 EasySocketIo is a repository develop with annotation for a easy use of socket.io
 
 
-#Gradle
+# Gradle
 Compile my wrapper:
 
 ```
@@ -64,7 +64,7 @@ You can connect and disconnect socket server in any class of your project
 
 # Step 2
 **CustomAnnotation**
-Need it for run service only need to use it in 1 activity
+Need it for run service, warning, only need to use it in 1 activity
 ```
     public BaseApp2 application;
     application = (BaseApp2) getApplicationContext();

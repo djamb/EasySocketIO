@@ -1,4 +1,4 @@
-package com.android.streye.annotation;
+package com.aminano.djamb.annotation;
 
 /**
  * Created by djamb on 8/04/19.
@@ -16,12 +16,15 @@ import com.android.streye.constant_share.MethodValue;
 import com.android.streye.stringshadow.StringChachi;
 
 public class CustomAnnotation extends Activity {
-  public BaseApp2 application;
+  private BaseApp2 application;
+  public static final String TAG ="CustomAnnotation";
 
   @MethodValue(value = "messages")
   public void myMethod7(Object[] object) {
-    Log.e("recive from server in event messages: ", "" + object[0]);
+    Log.i(TAG, "Recieve from server in event messages:    " + object[0]);
   }
+
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +41,7 @@ public class CustomAnnotation extends Activity {
     handler2.postDelayed(new Runnable() {
       @Override
       public void run() {
-        Log.e("Send data to socket", "" + application.sendData("message", "caca"));
+        Log.i(TAG, "Send data to socket?: " + application.sendData("message", "caca"));
 
         //You can discconect and reconnect
         //application.getMyService().closeSocket();
