@@ -33,5 +33,5 @@ dependencies {
         exclude group: 'org.json', module: 'json'
     }
     implementation project(':socketservicelibrary')
-
+//    implementation 'com.github.djamb:EasySocketIO:1.0.1'
 }
