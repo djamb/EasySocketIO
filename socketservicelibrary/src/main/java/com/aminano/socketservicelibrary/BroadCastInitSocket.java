@@ -10,7 +10,7 @@ public class BroadCastInitSocket extends BroadcastReceiver {
   @Override
   public void onReceive(Context context, Intent intent) {
     if (((BaseAppSocket)context.getApplicationContext()).isAutoRunServiceWhenSystemOn()) {
-      Log.e("aminano","BroadCastInitSocket autorun true");
+      Log.i("BroadCastInitSocket"," autorun true");
       ((BaseAppSocket) context.getApplicationContext()).runService();
     }
   }

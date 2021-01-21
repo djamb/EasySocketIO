@@ -21,7 +21,7 @@ import static android.content.ContentValues.TAG;
 public class SocketService extends Service {
   private PowerManager.WakeLock mWakeLock;
   private Socket socket;
-  private final static String channelId = "VideoCallsSocket";
+  private final static String channelId = "AminanoProperty";
   private IBinder mBinder = new MyBinder();
   private Object eventListener;
 
@@ -75,6 +75,8 @@ public class SocketService extends Service {
   }
 
   public void closeSocket() {
+    //TODO ojito añadido el if (socket!=null)
+    if (socket!=null)
     socket.disconnect();
     //socket=null;
   }
@@ -108,7 +110,7 @@ public class SocketService extends Service {
       methodBindSocketOn = socketOn.getClass().getMethod("socket", socket.getClass());
       methodBindSocketOn.invoke(socketOn, socket);
     } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-      Log.i(TAG, "Error", e);
+      Log.e(TAG, "Error", e);
     }
   }
 
@@ -118,7 +120,7 @@ public class SocketService extends Service {
       methods = socketOn.getClass().getMethod("emit", String.class, Object[].class);
       methods.invoke(socketOn, event, sendData);
     } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-      Log.i(TAG, "Error", e);
+      Log.e(TAG, "Error", e);
     }
   }
 

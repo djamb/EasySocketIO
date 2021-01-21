@@ -30,7 +30,7 @@ dependencies {
     exclude group: 'org.json', module: 'json'
   }
   //Local dependecies
-//      implementation project(':stringshadow')
-//      implementation project(':socketservicelibrary')
-  implementation 'com.github.djamb:EasySocketIO:1.0.5'
+      implementation project(':stringshadow')
+      implementation project(':socketservicelibrary')
+//  implementation 'com.github.djamb:EasySocketIO:1.0.5'
 }

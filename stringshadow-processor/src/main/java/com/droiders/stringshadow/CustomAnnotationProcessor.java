@@ -64,7 +64,6 @@ public class CustomAnnotationProcessor extends AbstractProcessor {
   @Override
   public synchronized void init(ProcessingEnvironment processingEnv) {
     super.init(processingEnv);
-    System.out.println("aminano mierda1");
     STRING_TYPES.add(InterfaceValue.class);
     STRING_TYPES.add(ExtendsValue.class);
     STRING_TYPES.add(MethodValue.class);

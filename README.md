@@ -13,7 +13,7 @@ allprojects {
   }
 }
   dependencies {
-    implementation 'com.github.djamb.EasySocketIO:socketservicelibrary:1.0.4'
+    implementation 'com.github.djamb.EasySocketIO:socketservicelibrary:1.0.6'
 	}
 
 ```
@@ -22,7 +22,7 @@ allprojects {
 This code is a basic example. I recommend you go to Activities in app module and see all examples.
 
 
-# For use it its need it:
+# Instructions:
 
 # Step 1
 
@@ -32,46 +32,75 @@ Baseapp2 extends BaseAppSocket and set your socket url. Add android:name=".BaseA
 
 **AndroidManifest.xml**
 ```
-<application
-  android:name=".BaseApp2"
->
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+  <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+  <uses-permission android:name="android.permission.WAKE_LOCK"/>
+  <application
+    android:usesCleartextTraffic="true"
+    android:name=".BaseApp2"
+  >
 
 ```
 
 ```
-public class BaseApp2 extends BaseAppSocket {
+public class BaseApp extends BaseAppSocket {
+
+  @Override
+   public void onCreate() {
+     super.onCreate();
+     runService();
+   }
+
   @Override
   public SocketParameterLibrary setSocketConfiguration() {
-    new SocketGeneralEvents();
     return new SocketParameterLibrary("YOUR IP WITH PORT", "");
   }
 }
 ```
-## Option 2 (**Under construction**)
+## Option 2
 You can connect and disconnect socket server in any class of your project
 
 **AndroidManifest.xml**
 ```
+ <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+  <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
+  <uses-permission android:name="android.permission.WAKE_LOCK"/>
 <application
   android:name="com.aminano.socketservicelibrary.BaseAppSocket"
+  android:usesCleartextTraffic="true"
 >
 ```
 **AnyClass**
 ```
-  //application.getMyService().closeSocket();
-  application.connect(new SocketParameterLibrary("ip","query"));
+  application.runService();
+
+     application.tryService(new BaseAppSocket.ServiceStatus() {
+       @Override
+       public void isRunning() {
+         application.connect(new SocketParameterLibrary("http://192.168.1.108:3000",""));
+         Log.i(TAG, "Send data to service?: " + application.sendData("message", "caca"));
+       }
+     });
 ```
 
 # Step 2
-**CustomAnnotation**
+**AnnotationWithBaseApp**
 Need it for run service, warning, only need to use it in 1 activity
 ```
-    public BaseApp2 application;
-    application = (BaseApp2) getApplicationContext();
+    public BaseApp application;
+    application = (BaseApp) getApplicationContext();
     //You can autorun service and run socket when android is rebooted
     //application.setAutoRunServiceWhenSystemOn(true);
-    //only need to start in 1 activity or applicaction
-    application.runService();
+    application.tryService(new BaseAppSocket.ServiceStatus() {
+       @Override
+       public void isRunning() {
+         Log.i(TAG, "Send data to service?: " + application.sendData("message", "caca"));
+       }
+    });
 ```
 
 Send data to socket server. Return true if its send it

@@ -39,7 +39,7 @@ public class StringChachi {
       methods = prueba.getClass().getMethod("bindViewer", object);
       methods.invoke(prueba, activity);
     } catch (ClassNotFoundException | NoSuchMethodException | IllegalAccessException | InstantiationException | InvocationTargetException e) {
-      Log.i(TAG, "Error", e);
+      Log.e(TAG, "Error", e);
     }
   }
 
@@ -61,7 +61,7 @@ public class StringChachi {
       methods = service.getClass().getMethod("setListener", object);
       methods.invoke(service, socketOn);
     } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
-      Log.i(TAG, "Error", e);
+      Log.e(TAG, "Error", e);
     }
     //try {
     //bindingClass = Class.forName(getPackage(application.getClass().getName()) + ".SuperService");
