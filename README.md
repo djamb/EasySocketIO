@@ -24,19 +24,23 @@ This code is a basic example. I recommend you go to Activities in app module and
 
 # Instructions:
 
-# Step 1
-
-## Option 1
-Baseapp2 extends BaseAppSocket and set your socket url. Add android:name=".BaseApp2" to application in . SocketGeneralEvents is not necessary, its a class for control general event in application enviorement.
-
-
-**AndroidManifest.xml**
+# Permission
 ```
   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
   <uses-permission android:name="android.permission.INTERNET"/>
   <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
   <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
   <uses-permission android:name="android.permission.WAKE_LOCK"/>
+```
+
+# Step 1
+
+## Option 1
+Baseapp extends BaseAppSocket and set your socket url, SocketGeneralEvents is not necessary, its a class for control general event in application enviorement.
+
+
+**AndroidManifest.xml**
+```
   <application
     android:usesCleartextTraffic="true"
     android:name=".BaseApp2"
@@ -64,11 +68,6 @@ You can connect and disconnect socket server in any class of your project
 
 **AndroidManifest.xml**
 ```
- <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-  <uses-permission android:name="android.permission.INTERNET"/>
-  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-  <uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"/>
-  <uses-permission android:name="android.permission.WAKE_LOCK"/>
 <application
   android:name="com.aminano.socketservicelibrary.BaseAppSocket"
   android:usesCleartextTraffic="true"
@@ -93,8 +92,6 @@ Need it for run service, warning, only need to use it in 1 activity
 ```
     public BaseApp application;
     application = (BaseApp) getApplicationContext();
-    //You can autorun service and run socket when android is rebooted
-    //application.setAutoRunServiceWhenSystemOn(true);
     application.tryService(new BaseAppSocket.ServiceStatus() {
        @Override
        public void isRunning() {
@@ -129,3 +126,9 @@ Method to recieve events from server
         //StringChachi.unbind2(this);
 ```
 
+
+#Custom option
+    You can autorun service and run socket when android is rebooted
+    ```
+    //application.setAutoRunServiceWhenSystemOn(true);
+    ```

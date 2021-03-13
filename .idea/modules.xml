@@ -3,11 +3,11 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Annotation.iml" filepath="$PROJECT_DIR$/Annotation.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/constant-share/constant-share.iml" filepath="$PROJECT_DIR$/constant-share/constant-share.iml" />
-      <module fileurl="file://$PROJECT_DIR$/socketservicelibrary/socketservicelibrary.iml" filepath="$PROJECT_DIR$/socketservicelibrary/socketservicelibrary.iml" />
-      <module fileurl="file://$PROJECT_DIR$/stringshadow/stringshadow.iml" filepath="$PROJECT_DIR$/stringshadow/stringshadow.iml" />
-      <module fileurl="file://$PROJECT_DIR$/stringshadow-processor/stringshadow-processor.iml" filepath="$PROJECT_DIR$/stringshadow-processor/stringshadow-processor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Annotation.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Annotation.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/constant-share/Annotation.constant-share.iml" filepath="$PROJECT_DIR$/.idea/modules/constant-share/Annotation.constant-share.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/socketservicelibrary/Annotation.socketservicelibrary.iml" filepath="$PROJECT_DIR$/.idea/modules/socketservicelibrary/Annotation.socketservicelibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/stringshadow/Annotation.stringshadow.iml" filepath="$PROJECT_DIR$/.idea/modules/stringshadow/Annotation.stringshadow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/stringshadow-processor/Annotation.stringshadow-processor.iml" filepath="$PROJECT_DIR$/.idea/modules/stringshadow-processor/Annotation.stringshadow-processor.iml" />
     </modules>
   </component>
 </project>

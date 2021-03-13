@@ -14,7 +14,7 @@ public class BaseApp extends BaseAppSocket {
 
   @Override
   public SocketParameterLibrary setSocketConfiguration() {
-    //You can set general event HERE
+    //You can set general event here
     //new SocketGeneralEvents();
     return new SocketParameterLibrary("http://192.168.1.108:3000", "");
   }
