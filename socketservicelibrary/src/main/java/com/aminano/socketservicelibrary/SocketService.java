@@ -94,7 +94,8 @@ public class SocketService extends Service {
   @Override
   public void onDestroy() {
     super.onDestroy();
-    mWakeLock.release();
+
+    if (mWakeLock != null) mWakeLock.release();
     if (socket != null) socket.disconnect();
   }
 

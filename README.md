@@ -132,3 +132,7 @@ Method to recieve events from server
     ```
     //application.setAutoRunServiceWhenSystemOn(true);
     ```
+#PD. Gradle is buggy, not generated annotation files, use:
+  ```
+        classpath 'com.android.tools.build:gradle:3.5.0'
+         ```

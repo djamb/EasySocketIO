@@ -42,8 +42,10 @@ public class AnnotationWithoutBaseApp extends Activity {
       @Override
       public void isRunning() {
         //application.connect(new SocketParameterLibrary("http://192.168.1.108:3000",""));
-        application.connect(new SocketParameterLibrary("http://192.168.43.134:3000", ""));
-        Log.i(TAG, "Send data to service?: " + application.sendData("message", "hola clase"));
+        //application.connect(new SocketParameterLibrary("http://192.168.43.134:3000", ""));
+        //application.connect(new SocketParameterLibrary("http://127.0.0.1:3000", ""));
+        application.connect(new SocketParameterLibrary("http://192.168.1.103:3000","socket.io"));
+        Log.e(TAG, "Send data to service?: " + application.sendData("message", "hola clase"));
       }
     });
   }
